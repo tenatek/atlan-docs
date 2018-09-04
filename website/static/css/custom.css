@@ -1,0 +1,37 @@
+.logo img {
+  height: 150px;
+}
+
+.blockImage {
+  margin-top: 40px;
+}
+
+.usageTitle {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0 0 40px;
+}
+
+.usageDescription {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.usageSnippet {
+  max-width: 70%;
+  margin: 0 auto 40px;
+}
+
+.usageButton {
+  text-align: center;
+}
+
+.projectDescription {
+  max-width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.projectRequirements {
+  font-size: 0.8rem;
+}

@@ -1,0 +1,22 @@
+{
+  "guide": {
+    "For developers": [
+      "models",
+      "schemas",
+      "references",
+      "hooks",
+      "error-handling",
+      "running-atlan",
+      "global-configuration"
+    ],
+    "For end users": [
+      "creating-data",
+      "retrieving-data",
+      "updating-data",
+      "deleting-data"
+    ]
+  },
+  "getting-started": {
+    "Getting started": ["installation", "quick-start"]
+  }
+}
