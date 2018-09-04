@@ -6,7 +6,7 @@ const siteConfig = {
   url: 'https://atlan.tenatek.com',
   baseUrl: '/',
 
-  projectName: 'atlan',
+  projectName: 'atlan-docs',
   organizationName: 'tenatek',
 
   headerLinks: [
