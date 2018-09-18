@@ -3,7 +3,6 @@
     "For developers": [
       "models",
       "schemas",
-      "references",
       "hooks",
       "error-handling",
       "running-atlan",
