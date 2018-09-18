@@ -41,7 +41,7 @@ const connection = await MongoClient.connect(mongoUrl);
 ## Starting the engine
 
 ```javascript
-const cityApi = atlan(connection.db('sw'), { city });
+const cityApi = new Atlan(connection.db('geo'), { city }).api();
 ```
 
 ## Plugging into an Express app

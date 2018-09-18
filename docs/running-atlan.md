@@ -3,4 +3,24 @@ id: running-atlan
 title: Running Atlan
 ---
 
-In construction
+To start your Atlan server, follow these steps:
+
+1. Create an `Atlan` instance with a [`Db` object](http://mongodb.github.io/node-mongodb-native/3.1/api/Db.html) and a dictionary of your models.
+
+   ```javascript
+   const Atlan = require('atlan');
+
+   let atlan = new Atlan(database, models);
+   ```
+
+2. Get the ExpressJS router by using the `api()` method.
+
+   ```javascript
+   let api = atlan.api();
+   ```
+
+3. Plug it into your ExpressJS app.
+
+   ```javascript
+   app.use('/your-api-root-path', api);
+   ```

@@ -245,10 +245,10 @@ const Usage = props => (
           <span className="hljs-string">'mongodb://localhost:27017'</span>
           );
           <br />
-          <span className="hljs-keyword">&nbsp;&nbsp;const</span> cityApi =
-          atlan(connection.db(
+          <span className="hljs-keyword">&nbsp;&nbsp;const</span> cityApi ={' '}
+          <span className="hljs-keyword">new</span> Atlan(connection.db(
           <span className="hljs-string">'geo'</span>
-          ), &#123; city });
+          ), &#123; city }).api();
           <br />
           <br />
           &nbsp;&nbsp;app.use(
