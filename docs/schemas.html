@@ -1,4 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Schemas · Atlan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Schemas are a key part of any data model. They are here to define how resources pertaining to a model should be structured. Atlan will use those schemas to automatically validate create/update operations."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Schemas · Atlan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://atlan.tenatek.com/index.html"/><meta property="og:description" content="Schemas are a key part of any data model. They are here to define how resources pertaining to a model should be structured. Atlan will use those schemas to automatically validate create/update operations."/><meta property="og:image" content="https://atlan.tenatek.com/img/atlan-purple.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://atlan.tenatek.com/img/atlan-purple.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/atlan-white.svg" alt="Atlan"/><h2 class="headerTitleWithLogo">Atlan</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/installation.html" target="_self">Getting started</a></li><li class="siteNavGroupActive"><a href="/docs/models.html" target="_self">Guide</a></li><li class="siteNavGroupActive"><a href="/docs/models.html" target="_self">API</a></li><li class=""><a href="https://github.com/tenatek/atlan" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>For developers</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">For developers</h3><ul><li class="navListItem"><a class="navItem" href="/docs/models.html">Models</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/schemas.html">Schemas</a></li><li class="navListItem"><a class="navItem" href="/docs/references.html">References</a></li><li class="navListItem"><a class="navItem" href="/docs/hooks.html">Hooks</a></li><li class="navListItem"><a class="navItem" href="/docs/error-handling.html">Error handling</a></li><li class="navListItem"><a class="navItem" href="/docs/running-atlan.html">Running Atlan</a></li><li class="navListItem"><a class="navItem" href="/docs/global-configuration.html">Global configuration</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">For end users</h3><ul><li class="navListItem"><a class="navItem" href="/docs/creating-data.html">Creating data</a></li><li class="navListItem"><a class="navItem" href="/docs/retrieving-data.html">Retrieving data</a></li><li class="navListItem"><a class="navItem" href="/docs/updating-data.html">Updating data</a></li><li class="navListItem"><a class="navItem" href="/docs/deleting-data.html">Deleting data</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Schemas · Atlan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Schemas define how resources pertaining to a model should be structured. Atlan will use those schemas to automatically validate create/update operations."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Schemas · Atlan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://atlan.tenatek.com/index.html"/><meta property="og:description" content="Schemas define how resources pertaining to a model should be structured. Atlan will use those schemas to automatically validate create/update operations."/><meta property="og:image" content="https://atlan.tenatek.com/img/logo-purple.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://atlan.tenatek.com/img/logo-purple.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-116065494-2"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'UA-116065494-2');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-white.png" alt="Atlan"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/installation.html" target="_self">Getting started</a></li><li class="siteNavGroupActive"><a href="/docs/models.html" target="_self">Guide</a></li><li class="siteNavGroupActive"><a href="/docs/models.html" target="_self">API</a></li><li class=""><a href="https://github.com/tenatek/atlan" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>For developers</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">For developers</h3><ul><li class="navListItem"><a class="navItem" href="/docs/models.html">Models</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/schemas.html">Schemas</a></li><li class="navListItem"><a class="navItem" href="/docs/hooks.html">Hooks</a></li><li class="navListItem"><a class="navItem" href="/docs/error-handling.html">Error handling</a></li><li class="navListItem"><a class="navItem" href="/docs/running-atlan.html">Running Atlan</a></li><li class="navListItem"><a class="navItem" href="/docs/global-configuration.html">Global configuration</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">For end users</h3><ul><li class="navListItem"><a class="navItem" href="/docs/creating-data.html">Creating data</a></li><li class="navListItem"><a class="navItem" href="/docs/retrieving-data.html">Retrieving data</a></li><li class="navListItem"><a class="navItem" href="/docs/updating-data.html">Updating data</a></li><li class="navListItem"><a class="navItem" href="/docs/deleting-data.html">Deleting data</a></li></ul></div></div></section></div><script>
             document.addEventListener('DOMContentLoaded', function() {
               createToggler('#navToggler', '#docsNav', 'docsSliderActive');
               createToggler('#tocToggler', 'body', 'tocActive');
@@ -14,6 +19,10 @@
                 var toggler = document.querySelector(togglerSelector);
                 var target = document.querySelector(targetSelector);
 
+                if (!toggler) {
+                  return;
+                }
+
                 toggler.onclick = function(event) {
                   event.preventDefault();
 
@@ -21,16 +30,37 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Schemas</h1></header><article><div><span><p>Schemas are a key part of any data model. They are here to define how resources pertaining to a model should be structured. Atlan will use those schemas to automatically validate create/update operations.</p>
-<h2><a class="anchor" aria-hidden="true" id="schema-specification"></a><a href="#schema-specification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Schema specification</h2>
+        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Schemas</h1></header><article><div><span><p>Schemas define how resources pertaining to a model should be structured. Atlan will use those schemas to automatically validate create/update operations.</p>
 <p>Schemas in Atlan are loosely based on the <a href="http://json-schema.org/">JSON schema specification</a> of the IETF. Atlan uses <a href="https://github.com/tenatek/aniame">Aniame</a> to validate resources based on their schemas.</p>
+<h2><a class="anchor" aria-hidden="true" id="descriptors"></a><a href="#descriptors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descriptors</h2>
 <p>Atlan schemas make use of small, nestable objects called <strong>descriptors</strong>. For example, the following object:</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">name</span>: <span class="hljs-string">'Yoda'</span>
+<pre><code class="hljs css language-javascript">{
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Seattle'</span>
 }
 </code></pre>
 <p>Is described by the following schema:</p>
-<pre><code class="hljs css languages- javascript">{
+<pre><code class="hljs css language-javascript">{
+  <span class="hljs-attr">name</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+  }
+}
+</code></pre>
+<p>Where:</p>
+<pre><code class="hljs css language-javascript">{
+  <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+}
+</code></pre>
+<p>Is a <strong>descriptor</strong>.</p>
+<p><strong>Descriptors</strong> are JSON objects that have the following properties:</p>
+<ul>
+<li>a required <code>type</code> property (either <code>string</code>, <code>number</code>, <code>boolean</code>, <code>object</code>, <code>array</code> or <code>ref</code>),</li>
+<li>other required properties depending on the <code>type</code>,</li>
+<li>an optional <code>required</code> property (must be a boolean),</li>
+<li>any other property that you may want to add.</li>
+</ul>
+<blockquote>
+<p>MongoDB documents can only be JSON objects. Therefore, you don't need to wrap your schemas in a <code>type: 'object'</code> descriptor. Doing the following would be incorrect:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> schema = {
   <span class="hljs-attr">type</span>: <span class="hljs-string">'object'</span>,
   <span class="hljs-attr">properties</span>: {
     <span class="hljs-attr">name</span>: {
@@ -39,115 +69,91 @@
   }
 }
 </code></pre>
-<p>Where both:</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'object'</span>,
-  <span class="hljs-attr">properties</span>: ...
+<p>Instead, you just write:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> schema = {
+  <span class="hljs-attr">name</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+  }
 }
 </code></pre>
-<p>And:</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
-}
-</code></pre>
-<p>Are <strong>descriptors</strong>.</p>
-<p><strong>Descriptors</strong> are JSON objects that have the following keys:</p>
-<ul>
-<li>a <code>type</code> key (either <code>string</code>, <code>number</code>, <code>boolean</code>, <code>object</code>, <code>array</code> or <code>ref</code>).</li>
-<li>an optional <code>description</code> key, which, if present, must be a string.</li>
-<li>an optional <code>required</code> key (<code>true</code> or <code>false</code>).</li>
-<li>other keys depending on the <code>type</code>.</li>
-</ul>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="resource-types"></a><a href="#resource-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource types</h2>
 <h3><a class="anchor" aria-hidden="true" id="objects"></a><a href="#objects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Objects</h3>
-<p><code>type: 'object'</code></p>
-<p>Used to indicate that the expected value is a JSON object.</p>
-<p>With <code>object</code>s, the <strong>descriptor</strong> must contain the <code>properties</code> key to describe what the object should contain. <code>properties</code>'s value should be an object with the expected keys, and, for each key, a <strong>descriptor</strong> of the key's expected value.</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'object'</span>,
-  <span class="hljs-attr">properties</span>: {
-    <span class="hljs-attr">species</span>: {
-      <span class="hljs-attr">type</span>: <span class="hljs-string">'object'</span>,
-      <span class="hljs-attr">properties</span>: {
-        <span class="hljs-attr">name</span>: {
-          <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>,
-          <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
-        },
-        <span class="hljs-attr">homeWorld</span>: {
-          <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
-        },
-        <span class="hljs-attr">population</span>: {
-          <span class="hljs-attr">type</span>: <span class="hljs-string">'number'</span>
-        }
-      }
+<p><code>type: 'object'</code> is used to indicate that the resource should be a JSON object.</p>
+<p>The descriptor must include a <code>properties</code> field to describe what the object should contain.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> citySchema = {
+  <span class="hljs-attr">name</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+  },
+  <span class="hljs-attr">geolocation</span>: {
+    <span class="hljs-attr">latitude</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'number'</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">longitude</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'number'</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>
     }
   }
 }
 </code></pre>
 <p>The following object is valid under the above schema.</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">species</span>: {
-    <span class="hljs-attr">name</span>: <span class="hljs-string">'Ewok'</span>,
-    <span class="hljs-attr">homeWorld</span>: <span class="hljs-string">'Forest moon of Endor'</span>
-    population: <span class="hljs-number">1200</span>
+<pre><code class="hljs css language-javascript">{
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Fairbanks'</span>,
+  <span class="hljs-attr">geolocation</span>: {
+    <span class="hljs-attr">latitude</span>: <span class="hljs-number">64.830624</span>,
+    <span class="hljs-attr">longitude</span>: <span class="hljs-number">-147.731613</span>
   }
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="arrays"></a><a href="#arrays" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arrays</h3>
-<p><code>type: 'array'</code></p>
-<p>Used to indicate that the expected value is an array.</p>
-<p>With <code>array</code>s, the <strong>descriptor</strong> must contain the <code>items</code> key, whose value is itself the <strong>descriptor</strong> of the items of the array.</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'object'</span>,
-  <span class="hljs-attr">properties</span>: {
-    <span class="hljs-attr">nicknames</span>: {
-      <span class="hljs-attr">type</span>: <span class="hljs-string">'array'</span>,
-      <span class="hljs-attr">required</span>: <span class="hljs-literal">false</span>,
-      <span class="hljs-attr">items</span>: {
-        <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
-      }
+<p><code>type: 'array'</code> is used to indicate that the resource should be an array.</p>
+<p>The descriptor must include an <code>items</code> field, whose value is itself the descriptor of the items of the array.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> citySchema = {
+  <span class="hljs-attr">name</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+  },
+  <span class="hljs-attr">nicknames</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'array'</span>,
+    <span class="hljs-attr">items</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
     }
   }
 }
 </code></pre>
 <p>The following object is valid under the above schema.</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">nicknames</span>: [<span class="hljs-string">'Ani'</span>, <span class="hljs-string">'The Chosen One'</span>, <span class="hljs-string">'Darth Vader'</span>]
+<pre><code class="hljs css language-javascript">{
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'New York City'</span>,
+  <span class="hljs-attr">nicknames</span>: [<span class="hljs-string">'The Big Apple'</span>, <span class="hljs-string">'The City That Never Sleeps'</span>]
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="references"></a><a href="#references" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References</h3>
-<p><code>type: 'ref'</code></p>
-<p>Used to indicate that the expected value is either:</p>
-<ul>
-<li>an object representing a new resource pertaining to this model, or another model. The new resource will be validated, stored in the database, and replaced with its MongoDB <code>ObjectID</code> in the parent resource.</li>
-<li>the MongoDB <code>ObjectID</code> of an existing resource pertaining to this model, or another model.</li>
-</ul>
-<p>With <code>type: 'ref'</code>, the <strong>descriptor</strong> must contain the <code>ref</code> key, whose value is a string, the name of the model that the referenced resource pertains to.</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">type</span>: <span class="hljs-string">'object'</span>,
-  <span class="hljs-attr">properties</span>: {
-    <span class="hljs-attr">master</span>: {
+<blockquote>
+<p>With MongoDB, you can can include, within a document, a reference to another document (either in the same collection or somewhere else). You do that by inserting the referenced document's <code>ObjectId</code> into a field within the referencing document.</p>
+</blockquote>
+<p><code>type: 'ref'</code> is used to indicate that the resource should be a reference.</p>
+<p>The descriptor must include a <code>ref</code> field, which will hold the name of the model that the referenced resource pertains to.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> stateSchema = {
+  <span class="hljs-attr">name</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+  },
+  <span class="hljs-attr">counties</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'array'</span>,
+    <span class="hljs-attr">items</span>: {
       <span class="hljs-attr">type</span>: <span class="hljs-string">'ref'</span>,
-      <span class="hljs-attr">indexAs</span>: <span class="hljs-string">'ref'</span>,
-      <span class="hljs-attr">ref</span>: <span class="hljs-string">'jedi'</span>
-    },
-    <span class="hljs-attr">padawans</span>: {
-      <span class="hljs-attr">type</span>: <span class="hljs-string">'array'</span>,
-      <span class="hljs-attr">items</span>: {
-        <span class="hljs-attr">type</span>: <span class="hljs-string">'ref'</span>,
-        <span class="hljs-attr">indexAs</span>: <span class="hljs-string">'ref'</span>,
-        <span class="hljs-attr">ref</span>: <span class="hljs-string">'jedi'</span>
-      }
+      <span class="hljs-attr">ref</span>: <span class="hljs-string">'county'</span>
     }
   }
 }
 </code></pre>
 <p>The following object is valid under the above schema.</p>
-<pre><code class="hljs css languages- javascript">{
-  <span class="hljs-attr">master</span>: {
-    <span class="hljs-comment">// a new 'jedi' resource, compliant with the 'jedi' schema</span>
-  },
-  <span class="hljs-comment">// alternatively, the MongoDB ObjectIDs of the referenced resources</span>
-  padawans: [<span class="hljs-string">'5abe33597d745c1992804194'</span>, <span class="hljs-string">'5afddf517195746608d181c5'</span>]
+<pre><code class="hljs css language-javascript">{
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Florida'</span>,
+  <span class="hljs-attr">counties</span>: [
+    <span class="hljs-comment">// each of these strings is the ObjectId of a document in the "county" collection</span>
+    <span class="hljs-string">'5abe33597d745c1992804194'</span>, 
+    <span class="hljs-string">'5afddf517195746608d181c5'</span>
+  ]
 }
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/models.html">← Models</a><a class="docs-next button" href="/docs/references.html">References →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#schema-specification">Schema specification</a><ul class="toc-headings"><li><a href="#objects">Objects</a></li><li><a href="#arrays">Arrays</a></li><li><a href="#references">References</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/atlan-white.svg" alt="Atlan" width="66" height="58"/></a><div><h5>Docs</h5><a href="#">Getting started</a><a href="#">Guide</a><a href="#">API</a></div><div><h5>Source code</h5><a href="#">GitHub</a><a href="#">Builds</a><a href="#">Test coverage</a></div><div><h5>More</h5><a href="/blog">Donate</a></div></section><section class="copyright">Copyright © 2018 Ludovic Cyril Michel</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/models.html"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/hooks.html"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav docOnPageNav"><ul class="toc-headings"><li><a href="#descriptors">Descriptors</a></li><li><a href="#resource-types">Resource types</a><ul class="toc-headings"><li><a href="#objects">Objects</a></li><li><a href="#arrays">Arrays</a></li><li><a href="#references">References</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/triangle-white.png" alt="Atlan"/></a><div><h5>Docs</h5><a href="#">Getting started</a><a href="#">Guide</a><a href="#">API</a></div><div><h5>Source code</h5><a href="#">GitHub</a><a href="#">Builds</a><a href="#">Test coverage</a></div><div><h5>More</h5><a href="/blog">Donate</a></div></section><section class="copyright">Copyright © 2018 Ludovic Cyril Michel</section></footer></div></body></html>
