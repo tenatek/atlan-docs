@@ -35,6 +35,9 @@ const siteConfig = {
 
   scripts: ['https://buttons.github.io/buttons.js'],
 
+  gaTrackingId: 'UA-116065494-2',
+  gaGtag: true,
+
   onPageNav: 'separate',
 
   ogImage: 'img/logo-purple.png',
