@@ -12,7 +12,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'installation', label: 'Getting started' },
     { doc: 'models', label: 'Guide' },
-    { doc: 'models', label: 'API' },
+    // { doc: 'models', label: 'API' },
     { href: 'https://github.com/tenatek/atlan', label: 'GitHub' }
   ],
 
