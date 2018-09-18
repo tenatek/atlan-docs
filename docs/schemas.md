@@ -3,7 +3,7 @@ id: schemas
 title: Schemas
 ---
 
-Schemas are a key part of any data model. They are here to define how resources pertaining to a model should be structured. Atlan will use those schemas to automatically validate create/update operations.
+Schemas define how resources pertaining to a model should be structured. Atlan will use those schemas to automatically validate create/update operations.
 
 ## Schema specification
 
@@ -13,7 +13,7 @@ Atlan schemas make use of small, nestable objects called __descriptors__. For ex
 
 ```javascript
 {
-  name: 'Yoda'
+  name: 'Seattle'
 }
 ```
 
@@ -47,41 +47,38 @@ And:
 }
 ```
 
-Are __descriptors__.
+Are _descriptors_.
 
-__Descriptors__ are JSON objects that have the following keys:
+_Descriptors_ are JSON objects that have the following properties:
 
-* a `type` key (either `string`, `number`, `boolean`, `object`, `array` or `ref`).
-* an optional `description` key, which, if present, must be a string.
-* an optional `required` key (`true` or `false`).
-* other keys depending on the `type`.
+* a required `type` property (either `string`, `number`, `boolean`, `object`, `array` or `ref`).
+* other required properties depending on the `type`.
+* an optional `required` property (must be a boolean).
+* any other property that you may want to add.
+
+> In MongoDB, documents can only be field/value objects. Therefore, it is not necessary to nest the top-level properties in a `type: 'object'`
 
 ### Objects
 
 `type: 'object'`
 
-Used to indicate that the expected value is a JSON object. 
+Used to indicate that the resource should be a JSON object. 
 
-With `object`s, the __descriptor__ must contain the `properties` key to describe what the object should contain. `properties`'s value should be an object with the expected keys, and, for each key, a __descriptor__ of the key's expected value.
+With `object`s, the _descriptor_ must contain the `properties` property to describe what the object should contain. `properties`'s value should be an object containing the _descriptors_ of each expected property on the resource.
 
 ```javascript
 {
   type: 'object',
   properties: {
-    species: {
-      type: 'object',
-      properties: {
-        name: {
-          type: 'string',
-          required: true
-        },
-        homeWorld: {
-          type: 'string'
-        },
-        population: {
-          type: 'number'
-        }
-      }
+    name: {
+      type: 'string',
+      required: true
+    },
+    population: {
+      type: 'number'
+    },
+    state: {
+      type: 'string'
     }
   }
 }
@@ -91,10 +88,9 @@ The following object is valid under the above schema.
 
 ```javascript
 {
-  species: {
-    name: 'Ewok',
-    homeWorld: 'Forest moon of Endor'
-    population: 1200
+  city: {
+    street: 'Evergreen Terrace',
+    number: 742
   }
 }
 ```
@@ -103,9 +99,9 @@ The following object is valid under the above schema.
 
 `type: 'array'`
 
-Used to indicate that the expected value is an array. 
+Used to indicate that the resource should be an array. 
 
-With `array`s, the __descriptor__ must contain the `items` key, whose value is itself the __descriptor__ of the items of the array.
+With `array`s, the _descriptor_ must contain the `items` property, whose value is itself the _descriptor_ of the items of the array.
 
 ```javascript
 {
@@ -126,7 +122,7 @@ The following object is valid under the above schema.
 
 ```javascript
 {
-  nicknames: ['Ani', 'The Chosen One', 'Darth Vader']
+  nicknames: ['Bart', 'El Barto']
 }
 ```
 
@@ -136,8 +132,8 @@ The following object is valid under the above schema.
 
 Used to indicate that the expected value is either:
 
-- an object representing a new resource pertaining to this model, or another model. The new resource will be validated, stored in the database, and replaced with its MongoDB `ObjectID` in the parent resource.
-- the MongoDB `ObjectID` of an existing resource pertaining to this model, or another model.
+* an object representing a new resource. The new resource will be validated, stored in the database, and replaced with its MongoDB `ObjectID` in the parent resource.
+* the MongoDB `ObjectID` of another, existing resource.
 
 With `type: 'ref'`, the __descriptor__ must contain the `ref` key, whose value is a string, the name of the model that the referenced resource pertains to.
 
@@ -145,17 +141,15 @@ With `type: 'ref'`, the __descriptor__ must contain the `ref` key, whose value i
 {
   type: 'object',
   properties: {
-    master: {
+    father: {
       type: 'ref',
-      indexAs: 'ref',
-      ref: 'jedi'
+      ref: 'person'
     },
-    padawans: {
+    pets: {
       type: 'array',
       items: {
         type: 'ref',
-        indexAs: 'ref',
-        ref: 'jedi'
+        ref: 'animal'
       }
     }
   }
@@ -166,10 +160,10 @@ The following object is valid under the above schema.
 
 ```javascript
 {
-  master: {
-    // a new 'jedi' resource, compliant with the 'jedi' schema
+  father: {
+    // the full 'person' object
   },
-  // alternatively, the MongoDB ObjectIDs of the referenced resources
-  padawans: ['5abe33597d745c1992804194', '5afddf517195746608d181c5']
+  // alternatively, database IDs, or anything else
+  pets: ['5abe33597d745c1992804194', '5afddf517195746608d181c5']
 }
 ```

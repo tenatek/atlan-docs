@@ -16,8 +16,9 @@ const siteConfig = {
     { href: 'https://github.com/tenatek/atlan', label: 'GitHub' }
   ],
 
-  headerIcon: 'img/atlan-white.svg',
-  footerIcon: 'img/atlan-white.svg',
+  headerIcon: 'img/logo-white.png',
+  disableHeaderTitle: true,
+  footerIcon: 'img/triangle-white.png',
   favicon: 'img/favicon.ico',
 
   colors: {
@@ -36,8 +37,8 @@ const siteConfig = {
 
   onPageNav: 'separate',
 
-  ogImage: 'img/atlan-purple.svg',
-  twitterImage: 'img/atlan-purple.svg'
+  ogImage: 'img/logo-purple.png',
+  twitterImage: 'img/logo-purple.png'
 };
 
 module.exports = siteConfig;

@@ -6,7 +6,7 @@ title: Quick start
 ## Declaring a JSON schema
 
 ```javascript
-const jedi = {
+const city = {
   schema: {
     type: 'object',
     properties: {
@@ -14,17 +14,17 @@ const jedi = {
         type: 'string',
         required: true
       },
-      lightsaberColor: {
-        type: 'string',
+      population: {
+        type: 'number',
         required: true
       },
-      killedByAnakin: {
-        type: 'boolean'
+      mayor: {
+        type: 'string'
       },
-      battlesFought: {
+      postCodes: {
         type: 'array',
         items: {
-          type: 'string'
+          type: 'number'
         }
       }
     }
@@ -41,7 +41,7 @@ const connection = await MongoClient.connect(mongoUrl);
 ## Starting the engine
 
 ```javascript
-const jediApi = atlan(connection.db('sw'), { jedi });
+const cityApi = atlan(connection.db('sw'), { city });
 ```
 
 ## Plugging into an Express app
@@ -50,7 +50,7 @@ const jediApi = atlan(connection.db('sw'), { jedi });
 const express = require('express');
 const app = express();
 
-app.use('/api', jediApi);
+app.use('/api', cityApi);
 
 app.listen(port);
 ```
@@ -60,15 +60,15 @@ app.listen(port);
 You can now make CRUD Web requests. For instance:
 
 ```http
-POST /api/jedi
+POST /api/city
 
 {
-  "name": "Windu",
-  "lightsaberColor": "purple",
-  "killedByAnakin": true,
-  "battlesFought": [
-    "Naboo Crisis",
-    "Clone Wars"
+  "name": "Miami",
+  "population": 453000,
+  "postCodes": [
+    33110,
+    33109,
+    33111
   ]
 }
 ```
@@ -78,7 +78,7 @@ Will persist the data to the database and return a `201 Created` status code wit
 Then doing:
 
 ```http
-GET /api/jedi?killedByAnakin=true
+GET /api/city?population_gt=400000
 ```
 
 Will return a `200 OK` code along with the data:
@@ -87,12 +87,12 @@ Will return a `200 OK` code along with the data:
 [
   {
     "_id": "5abf5e3b3efd1720595cc82f",
-    "name": "Windu",
-    "lightsaberColor": "purple",
-    "killedByAnakin": true,
-    "battlesFought": [
-      "Naboo Crisis",
-      "Clone Wars"
+    "name": "Miami",
+    "population": 453000,
+    "postCodes": [
+      33110,
+      33109,
+      33111
     ]
   }
 ]

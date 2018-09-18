@@ -44,10 +44,9 @@ class HomeSplash extends React.Component {
       <SplashContainer>
         <div className="inner">
           <div className="logo">
-            <img src={imgUrl('atlan-purple.svg')} />
+            <img src={imgUrl('logo-purple.png')} />
           </div>
           <h1 className="projectTitle">
-            {siteConfig.title}
             <small>{siteConfig.tagline}</small>
           </h1>
           <p className="projectDescription">
@@ -135,105 +134,146 @@ const Usage = props => (
   <Container padding={['bottom', 'top']}>
     <h3 className="usageTitle">Simple. Really.</h3>
     <p className="usageDescription">
-      This is what an Atlan application looks like.<br />With this code running,
-      you can readily make <code>GET</code>, <code>POST</code>,{' '}
-      <code>PATCH</code> and <code>DELETE</code> requests to
+      This is what an Atlan application looks like.
+      <br />
+      With this code running, you can readily make <code>GET</code>,{' '}
+      <code>POST</code>, <code>PATCH</code> and <code>DELETE</code> requests to
       <code>localhost:3000/api/jedi</code>.
     </p>
     <div className="usageSnippet">
       <pre>
         <code className="hljs">
           <span className="hljs-keyword">const</span> express ={' '}
-          <span className="hljs-built_in">require</span>(<span className="hljs-string">
-            'express'
-          </span>);<br />
+          <span className="hljs-built_in">require</span>(
+          <span className="hljs-string">'express'</span>
+          );
+          <br />
           <span className="hljs-keyword">const</span> &#123; MongoClient } ={' '}
-          <span className="hljs-built_in">require</span>(<span className="hljs-string">
-            'mongodb'
-          </span>);<br />
+          <span className="hljs-built_in">require</span>(
+          <span className="hljs-string">'mongodb'</span>
+          );
+          <br />
           <span className="hljs-keyword">const</span> atlan ={' '}
-          <span className="hljs-built_in">require</span>(<span className="hljs-string">
-            'atlan'
-          </span>);<br />
+          <span className="hljs-built_in">require</span>(
+          <span className="hljs-string">'atlan'</span>
+          );
           <br />
-          <span className="hljs-keyword">const</span> app = express();<br />
           <br />
-          <span className="hljs-keyword">const</span> jedi = &#123;<br />
-          <span className="hljs-attr">&nbsp;&nbsp;schema</span>: &#123;<br />
+          <span className="hljs-keyword">const</span> app = express();
+          <br />
+          <br />
+          <span className="hljs-keyword">const</span> jedi = &#123;
+          <br />
+          <span className="hljs-attr">&nbsp;&nbsp;schema</span>: &#123;
+          <br />
           <span className="hljs-attr">&nbsp;&nbsp;&nbsp;&nbsp;type</span>:{' '}
           <span className="hljs-string">'object'</span>,<br />
           <span className="hljs-attr">&nbsp;&nbsp;&nbsp;&nbsp;properties</span>:
-          &#123;<br />
+          &#123;
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name
-          </span>: &#123;<br />
+          </span>
+          : &#123;
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
-          </span>: <span className="hljs-string">'string'</span>,<br />
+          </span>
+          : <span className="hljs-string">'string'</span>,<br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required
-          </span>: <span className="hljs-literal">true</span>
+          </span>
+          : <span className="hljs-literal">true</span>
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lightsaberColor
-          </span>: &#123;<br />
+          </span>
+          : &#123;
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
-          </span>: <span className="hljs-string">'string'</span>,<br />
+          </span>
+          : <span className="hljs-string">'string'</span>,<br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required
-          </span>: <span className="hljs-literal">true</span>
+          </span>
+          : <span className="hljs-literal">true</span>
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killedByAnakin
-          </span>: &#123;<br />
+          </span>
+          : &#123;
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
-          </span>: <span className="hljs-string">'boolean'</span>
+          </span>
+          : <span className="hljs-string">'boolean'</span>
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;battlesFought
-          </span>: &#123;<br />
+          </span>
+          : &#123;
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
-          </span>: <span className="hljs-string">'array'</span>,<br />
+          </span>
+          : <span className="hljs-string">'array'</span>,<br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items
-          </span>: &#123;<br />
+          </span>
+          : &#123;
+          <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
-          </span>: <span className="hljs-string">'string'</span>
+          </span>
+          : <span className="hljs-string">'string'</span>
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-          &nbsp;&nbsp;}<br />
-          };<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
           <br />
-          (<span className="hljs-keyword">async</span>{' '}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}
+          <br />
+          &nbsp;&nbsp;}
+          <br />
+          };
+          <br />
+          <br />(<span className="hljs-keyword">async</span>{' '}
           <span className="hljs-function">
-            <span className="hljs-keyword">function</span>(<span className="hljs-params" />){' '}
-          </span>&#123;<br />
+            <span className="hljs-keyword">function</span>(
+            <span className="hljs-params" />){' '}
+          </span>
+          &#123;
+          <br />
           <br />
           <span className="hljs-keyword">&nbsp;&nbsp;const</span> connection ={' '}
-          <span className="hljs-keyword">await</span> MongoClient.connect(<span className="hljs-string">
-            'mongodb://localhost:27017'
-          </span>);<br />
+          <span className="hljs-keyword">await</span> MongoClient.connect(
+          <span className="hljs-string">'mongodb://localhost:27017'</span>
+          );
+          <br />
           <span className="hljs-keyword">&nbsp;&nbsp;const</span> jediApi =
-          atlan(connection.db(<span className="hljs-string">'sw'</span>), &#123;
-          jedi });<br />
+          atlan(connection.db(
+          <span className="hljs-string">'sw'</span>
+          ), &#123; jedi });
           <br />
-          &nbsp;&nbsp;app.use(<span className="hljs-string">'/api'</span>,
-          jediApi);<br />
           <br />
-          &nbsp;&nbsp;app.listen(<span className="hljs-number">
-            3000
-          </span>);<br />
+          &nbsp;&nbsp;app.use(
+          <span className="hljs-string">'/api'</span>, jediApi);
           <br />
-          })();<br />
+          <br />
+          &nbsp;&nbsp;app.listen(
+          <span className="hljs-number">3000</span>
+          );
+          <br />
+          <br />
+          })();
+          <br />
         </code>
       </pre>
     </div>
