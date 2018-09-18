@@ -1,5 +1,11 @@
 const React = require('react');
 
+const siteConfig = require(process.cwd() + '/siteConfig.js');
+
+function docUrl(doc, language) {
+  return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
+}
+
 class Footer extends React.Component {
   docUrl(doc, language) {
     const baseUrl = this.props.config.baseUrl;
@@ -26,19 +32,21 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href="#">Getting started</a>
-            <a href="#">Guide</a>
-            <a href="#">API</a>
+            <a href={docUrl('installation.html')}>Getting started</a>
+            <a href={docUrl('models.html')}>Guide</a>
+            <a href={docUrl('models.html')}>API</a>
           </div>
           <div>
             <h5>Source code</h5>
-            <a href="#">GitHub</a>
-            <a href="#">Builds</a>
-            <a href="#">Test coverage</a>
+            <a href="https://github.com/tenatek/atlan">GitHub</a>
+            <a href="https://travis-ci.org/tenatek/atlan">Builds</a>
+            <a href="https://coveralls.io/github/tenatek/atlan">
+              Test coverage
+            </a>
           </div>
           <div>
             <h5>More</h5>
-            <a href={this.props.config.baseUrl + 'blog'}>Donate</a>
+            <a href="#">Donate</a>
           </div>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>

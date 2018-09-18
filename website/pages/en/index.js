@@ -136,9 +136,10 @@ const Usage = props => (
     <p className="usageDescription">
       This is what an Atlan application looks like.
       <br />
+      <br />
       With this code running, you can readily make <code>GET</code>,{' '}
       <code>POST</code>, <code>PATCH</code> and <code>DELETE</code> requests to
-      <code>localhost:3000/api/jedi</code>.
+      <code>localhost:3000/api/city</code>.
     </p>
     <div className="usageSnippet">
       <pre>
@@ -162,79 +163,66 @@ const Usage = props => (
           <span className="hljs-keyword">const</span> app = express();
           <br />
           <br />
-          <span className="hljs-keyword">const</span> jedi = &#123;
+          <span className="hljs-keyword">const</span> city = &#123;
           <br />
           <span className="hljs-attr">&nbsp;&nbsp;schema</span>: &#123;
           <br />
-          <span className="hljs-attr">&nbsp;&nbsp;&nbsp;&nbsp;type</span>:{' '}
-          <span className="hljs-string">'object'</span>,<br />
-          <span className="hljs-attr">&nbsp;&nbsp;&nbsp;&nbsp;properties</span>:
+          <span className="hljs-attr">&nbsp;&nbsp;&nbsp;&nbsp;name</span>:
           &#123;
           <br />
           <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name
-          </span>
-          : &#123;
-          <br />
-          <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
           </span>
           : <span className="hljs-string">'string'</span>,<br />
           <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required
           </span>
           : <span className="hljs-literal">true</span>
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+          &nbsp;&nbsp;&nbsp;&nbsp;},
+          <br />
+          <span className="hljs-attr">&nbsp;&nbsp;&nbsp;&nbsp;population</span>:
+          &#123;
           <br />
           <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lightsaberColor
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
+          </span>
+          : <span className="hljs-string">'number'</span>,<br />
+          <span className="hljs-attr">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required
+          </span>
+          : <span className="hljs-literal">true</span>
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;},
+          <br />
+          <span className="hljs-attr">
+            &nbsp;&nbsp;&nbsp;&nbsp;isStateCapital
           </span>
           : &#123;
           <br />
           <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
-          </span>
-          : <span className="hljs-string">'string'</span>,<br />
-          <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required
-          </span>
-          : <span className="hljs-literal">true</span>
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-          <br />
-          <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;killedByAnakin
-          </span>
-          : &#123;
-          <br />
-          <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
           </span>
           : <span className="hljs-string">'boolean'</span>
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+          &nbsp;&nbsp;&nbsp;&nbsp;},
+          <br />
+          <span className="hljs-attr">&nbsp;&nbsp;&nbsp;&nbsp;postCodes</span>:
+          &#123;
           <br />
           <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;battlesFought
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
+          </span>
+          : <span className="hljs-string">'array'</span>,<br />
+          <span className="hljs-attr">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items
           </span>
           : &#123;
           <br />
           <span className="hljs-attr">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
           </span>
-          : <span className="hljs-string">'array'</span>,<br />
-          <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items
-          </span>
-          : &#123;
-          <br />
-          <span className="hljs-attr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type
-          </span>
-          : <span className="hljs-string">'string'</span>
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+          : <span className="hljs-string">'number'</span>
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
           <br />
@@ -257,14 +245,14 @@ const Usage = props => (
           <span className="hljs-string">'mongodb://localhost:27017'</span>
           );
           <br />
-          <span className="hljs-keyword">&nbsp;&nbsp;const</span> jediApi =
+          <span className="hljs-keyword">&nbsp;&nbsp;const</span> cityApi =
           atlan(connection.db(
-          <span className="hljs-string">'sw'</span>
-          ), &#123; jedi });
+          <span className="hljs-string">'geo'</span>
+          ), &#123; city });
           <br />
           <br />
           &nbsp;&nbsp;app.use(
-          <span className="hljs-string">'/api'</span>, jediApi);
+          <span className="hljs-string">'/api'</span>, cityApi);
           <br />
           <br />
           &nbsp;&nbsp;app.listen(
