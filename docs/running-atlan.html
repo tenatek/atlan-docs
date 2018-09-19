@@ -32,6 +32,25 @@
             });
         </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Running Atlan</h1></header><article><div><span><p>To start your Atlan server, follow these steps:</p>
 <ol>
+<li><p>Put your models together in a model dictionary.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> models = {
+  <span class="hljs-attr">city</span>: {
+    <span class="hljs-attr">schema</span>: { <span class="hljs-comment">/* ... */</span> },
+    <span class="hljs-attr">hooks</span>: { <span class="hljs-comment">/* ... */</span> },
+    <span class="hljs-attr">options</span>: { <span class="hljs-comment">/* ... */</span> }
+  },
+  <span class="hljs-attr">county</span>: {
+    <span class="hljs-attr">schema</span>: { <span class="hljs-comment">/* ... */</span> },
+    <span class="hljs-attr">hooks</span>: { <span class="hljs-comment">/* ... */</span> },
+    <span class="hljs-attr">options</span>: { <span class="hljs-comment">/* ... */</span> }
+  },
+  <span class="hljs-attr">state</span>: {
+    <span class="hljs-attr">schema</span>: { <span class="hljs-comment">/* ... */</span> },
+    <span class="hljs-attr">hooks</span>: { <span class="hljs-comment">/* ... */</span> },
+    <span class="hljs-attr">options</span>: { <span class="hljs-comment">/* ... */</span> }
+  }
+};
+</code></pre></li>
 <li><p>Create an <code>Atlan</code> instance with a <a href="http://mongodb.github.io/node-mongodb-native/3.1/api/Db.html"><code>Db</code> object</a>, a dictionary of your models, and an optional <code>globalConfig</code> object.</p>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> Atlan = <span class="hljs-built_in">require</span>(<span class="hljs-string">'atlan'</span>);
 
