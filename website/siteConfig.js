@@ -41,8 +41,8 @@ const siteConfig = {
 
   onPageNav: 'separate',
 
-  ogImage: 'img/logo-purple.png',
-  twitterImage: 'img/logo-purple.png'
+  ogImage: 'img/cover.jpg',
+  twitterImage: 'img/cover.jpg'
 };
 
 module.exports = siteConfig;
