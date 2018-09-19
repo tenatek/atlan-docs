@@ -3,8 +3,36 @@ id: creating-data
 title: Creating data
 ---
 
-To create a resource server-side, use the `POST` HTTP verb. The route you should use is `/:your-model-name`.
+To create a resource, use the `POST` HTTP verb. Use the following route:
 
-Just send a JSON object compliant with the model's schema, in the body of your request.
+```javascript
+apiRootUrl + '/' + modelName
+```
+
+Just send a JSON object compliant with the resource's schema, in the body of your request.
+
+For instance, if you have the following schema:
+
+```javascript
+let stateSchema = {
+  name: {
+    type: 'string'
+  },
+  population: {
+    type: 'number'
+  }
+}
+```
+
+To create a new state, you would do:
+
+```http
+POST /api/state
+
+{
+  "name": "Florida",
+  "population": 21000000
+}
+```
 
 If the request is successful, you'll receive a `201` response code.
