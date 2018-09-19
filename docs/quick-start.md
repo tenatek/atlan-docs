@@ -8,24 +8,21 @@ title: Quick start
 ```javascript
 const city = {
   schema: {
-    type: 'object',
-    properties: {
-      name: {
-        type: 'string',
-        required: true
-      },
-      population: {
-        type: 'number',
-        required: true
-      },
-      mayor: {
-        type: 'string'
-      },
-      postCodes: {
-        type: 'array',
-        items: {
-          type: 'number'
-        }
+    name: {
+      type: 'string',
+      required: true
+    },
+    population: {
+      type: 'number',
+      required: true
+    },
+    mayor: {
+      type: 'string'
+    },
+    postCodes: {
+      type: 'array',
+      items: {
+        type: 'number'
       }
     }
   }

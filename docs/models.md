@@ -3,9 +3,9 @@ id: models
 title: Models
 ---
 
-Atlan's purpose is to automate the creation of **REST** APIs. Atlan mounts a server that allows end users to perform four basic operations on your database: creating, retrieving, updating and deleting resources. 
+Atlan works by creating an [ExpressJS router](https://expressjs.com/en/4x/api.html#router) that will allow your end users to perform four basic operations on your database: creating, retrieving, updating and deleting resources. 
 
-The first step in creating an API with Atlan is to identify and describe the __resources__ that your end users will manipulate. To do that, we create __models__.
+The first step in creating an API with Atlan is to identify and describe the __resources__ that your end users will manipulate. To do that, we have __models__.
 
 > For example, in an application that keeps track of geographical locations across the U.S., you could have a `city` model and a `county` model.
 
