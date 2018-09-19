@@ -15,6 +15,7 @@ const siteConfig = {
     // { doc: 'models', label: 'API' },
     { href: 'https://github.com/tenatek/atlan', label: 'GitHub' }
   ],
+  cleanUrl: true,
 
   headerIcon: 'img/logo-white.png',
   disableHeaderTitle: true,
