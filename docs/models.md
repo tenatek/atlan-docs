@@ -23,4 +23,4 @@ With Atlan, each model is a JSON object that contains the following properties:
 
   > Each create/update operation is validated against the model's `schema`, so this is not something that you should worry about when defining hooks.
 
-* an `options` object, used to define how your API should respond to the end user in case something goes wrong.
+* an `options` object.
