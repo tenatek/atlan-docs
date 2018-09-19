@@ -60,7 +60,7 @@ class HomeSplash extends React.Component {
           <div className="section promoSection">
             <div className="promoRow">
               <div className="pluginRowBlock">
-                <Button href={docUrl('installation.html', language)}>
+                <Button href={docUrl('installation', language)}>
                   Get started
                 </Button>
                 <Button href="https://github.com/tenatek/atlan">
@@ -266,7 +266,7 @@ const Usage = props => (
       </pre>
     </div>
     <div className="usageButton">
-      <Button href={docUrl('installation.html')}>Get started</Button>
+      <Button href={docUrl('installation')}>Get started</Button>
     </div>
   </Container>
 );
