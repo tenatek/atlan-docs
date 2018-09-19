@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Deleting data · Atlan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="To delete a resource server-side, use the `DELETE` HTTP verb. The route you should use is `/:your-model-name/:your-resource-id`."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Deleting data · Atlan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://atlan.tenatek.com/index.html"/><meta property="og:description" content="To delete a resource server-side, use the `DELETE` HTTP verb. The route you should use is `/:your-model-name/:your-resource-id`."/><meta property="og:image" content="https://atlan.tenatek.com/img/logo-purple.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://atlan.tenatek.com/img/logo-purple.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-116065494-2"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Deleting data · Atlan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="To delete a resource, use the `DELETE` HTTP verb. Use the following route:"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Deleting data · Atlan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://atlan.tenatek.com/index.html"/><meta property="og:description" content="To delete a resource, use the `DELETE` HTTP verb. Use the following route:"/><meta property="og:image" content="https://atlan.tenatek.com/img/logo-purple.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://atlan.tenatek.com/img/logo-purple.png"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-116065494-2"></script><script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
               gtag('js', new Date());
@@ -30,7 +30,33 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Deleting data</h1></header><article><div><span><p>To delete a resource server-side, use the <code>DELETE</code> HTTP verb. The route you should use is <code>/:your-model-name/:your-resource-id</code>.</p>
+        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Deleting data</h1></header><article><div><span><p>To delete a resource, use the <code>DELETE</code> HTTP verb. Use the following route:</p>
+<pre><code class="hljs css language-javascript">apiRootUrl + <span class="hljs-string">'/'</span> + modelName + <span class="hljs-string">'/'</span> + resourceId
+</code></pre>
 <p>There shouldn't be a request body.</p>
+<p>For instance, if you have the following schema:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">let</span> stateSchema = {
+  <span class="hljs-attr">name</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+  },
+  <span class="hljs-attr">population</span>: {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'number'</span>
+  }
+}
+</code></pre>
+<p>And the following document is already in the database:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"_id"</span>: <span class="hljs-string">"5abf5e3b3efd1720595cc82f"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Florida"</span>,
+  <span class="hljs-attr">"population"</span>: <span class="hljs-number">21000000</span>
+}
+</code></pre>
+<p>To delete the document, you just need to do:</p>
+<pre><code class="hljs css language-http">DELETE /api/state/5abf5e3b3efd1720595cc82f
+
+{
+  "name": "Florida"
+}
+</code></pre>
 <p>If the request is successful, you'll receive a <code>200</code> response code.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/updating-data.html"><span class="arrow-prev">← </span><span>Previous</span></a></div></div></div><nav class="onPageNav docOnPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/triangle-white.png" alt="Atlan"/></a><div><h5>Docs</h5><a href="/docs/installation.html">Getting started</a><a href="/docs/models.html">Guide</a></div><div><h5>Source code</h5><a href="https://github.com/tenatek/atlan">GitHub</a><a href="https://travis-ci.org/tenatek/atlan">Builds</a><a href="https://coveralls.io/github/tenatek/atlan">Test coverage</a></div><div><h5>More</h5><a href="#">Donate</a></div></section><section class="copyright">Copyright © 2018 Ludovic Cyril Michel</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/updating-data.html"><span class="arrow-prev">← </span><span>Previous</span></a></div></div></div><nav class="onPageNav docOnPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/triangle-white.png" alt="Atlan"/></a><div><h5>Docs</h5><a href="/docs/installation.html">Getting started</a><a href="/docs/models.html">Guide</a></div><div><h5>Source code</h5><a href="https://github.com/tenatek/atlan">GitHub</a><a href="https://travis-ci.org/tenatek/atlan">Builds</a><a href="https://coveralls.io/github/tenatek/atlan">Test coverage</a></div><div><h5>More</h5><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"/><input type="hidden" name="hosted_button_id" value="PT3L5GX4Q44ZS"/><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/></form></div></section><section class="copyright">Copyright © 2018 Ludovic Cyril Michel</section></footer></div></body></html>
