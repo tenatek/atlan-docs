@@ -134,10 +134,11 @@ const Usage = props => (
   <Container padding={['bottom', 'top']}>
     <h3 className="usageTitle">Simple. Really.</h3>
     <p className="usageDescription">
-      This is what an Atlan application looks like.
+      This is what an Atlan application looks like. Copy this code, install the
+      dependencies with NPM, and just run it.
       <br />
       <br />
-      With this code running, you can readily make <code>GET</code>,{' '}
+      Once your server is up, you can readily make <code>GET</code>,{' '}
       <code>POST</code>, <code>PATCH</code> and <code>DELETE</code> requests to
       <code>localhost:3000/api/city</code>.
     </p>
