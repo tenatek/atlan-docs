@@ -154,7 +154,7 @@ const Usage = props => (
           <span className="hljs-string">'mongodb'</span>
           );
           <br />
-          <span className="hljs-keyword">const</span> atlan ={' '}
+          <span className="hljs-keyword">const</span> Atlan ={' '}
           <span className="hljs-built_in">require</span>(
           <span className="hljs-string">'atlan'</span>
           );

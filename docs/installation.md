@@ -12,7 +12,7 @@ npm install --save atlan
 Then, you can go ahead and import the package in your code with:
 
 ```javascript
-const atlan = require('atlan');
+const Atlan = require('atlan');
 ```
 
 ## Requirements

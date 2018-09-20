@@ -35,4 +35,4 @@ POST /api/state
 }
 ```
 
-If the request is successful, you'll receive a `201` response code.
+If the request is successful, you'll receive a `201` response code with the ID of the newly created document.
