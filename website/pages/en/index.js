@@ -35,40 +35,14 @@ class HomeSplash extends React.Component {
               <p className="projectRequirements">
                 Requires Node.js, ExpressJS and MongoDB.
               </p>
+              <p className="liveDescription">
+                Try it! The code below is running live.
+                <br />
+                Make GET, POST, PATCH and DELETE requests at:
+                <br />
+                <code id="liveUrl">this url</code>
+              </p>
               <div className="usageSnippet" id="runkit" />
-              <div className="section promoSection">
-                <div className="promoRow">
-                  <div className="pluginRowBlock">
-                    <div className="pluginWrapper buttonWrapper">
-                      <a
-                        id="tryLive"
-                        className="button"
-                        href="#"
-                        target="_blank"
-                      >
-                        Try it live
-                      </a>
-                    </div>
-                    <div className="pluginWrapper buttonWrapper">
-                      <a
-                        className="button"
-                        href={docUrl('installation', language)}
-                      >
-                        Get started
-                      </a>
-                    </div>
-                    <div className="pluginWrapper buttonWrapper">
-                      <a
-                        className="button"
-                        href="https://github.com/tenatek/atlan"
-                        target="_blank"
-                      >
-                        View on GitHub
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -141,6 +115,27 @@ class Index extends React.Component {
         <HomeSplash language={language} />
         <div className="mainContainer">
           <Features />
+          <h3 className="promoTitle">Ready to dive in?</h3>
+          <div className="section promoSection">
+            <div className="promoRow">
+              <div className="pluginRowBlock">
+                <div className="pluginWrapper buttonWrapper">
+                  <a className="button" href={docUrl('installation', language)}>
+                    Get started
+                  </a>
+                </div>
+                <div className="pluginWrapper buttonWrapper">
+                  <a
+                    className="button"
+                    href="https://github.com/tenatek/atlan"
+                    target="_blank"
+                  >
+                    View on GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

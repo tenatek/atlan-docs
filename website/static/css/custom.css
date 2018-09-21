@@ -10,27 +10,6 @@
   margin-top: 40px;
 }
 
-.usageTitle {
-  text-align: center;
-  font-size: 3rem;
-  margin: 0 0 40px;
-}
-
-.usageDescription {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.usageSnippet {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.usageButton {
-  text-align: center;
-}
-
 .projectDescription {
   max-width: 60%;
   margin-right: auto;
@@ -39,4 +18,21 @@
 
 .projectRequirements {
   font-size: 0.8rem;
+}
+
+.liveDescription {
+  max-width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  font-style: italic;
+  color: #9456ab;
+}
+
+.promoTitle {
+  text-align: center;
+  font-size: 3rem;
+  padding: 3rem 0 1rem;
+  margin: 0 auto;
+  font-style: italic;
+  color: #9456ab;
 }
