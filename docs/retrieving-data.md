@@ -79,7 +79,7 @@ If the request is successful, you'll receive a `200` response code along with an
 
 ### Query parameters
 
-Atlan supports a number of query parameters that allow you to leverage MongoDB's query capabilities:
+Atlan supports a number of query parameters that allow you to leverage Mongo's query capabilities:
 
 Query parameter | Value | Description
 - | - | -

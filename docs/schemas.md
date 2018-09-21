@@ -44,7 +44,7 @@ __Descriptors__ are JSON objects that have the following properties:
 * an optional `required` property (must be a boolean),
 * any other property that you may want to add.
 
-> MongoDB documents can only be JSON objects. Therefore, you don't need to wrap your schemas in a `type: 'object'` descriptor. Doing the following would be incorrect:
+> Mongo documents can only be JSON objects. Therefore, you don't need to wrap your schemas in a `type: 'object'` descriptor. Doing the following would be incorrect:
 >```javascript
 > let schema = {
 >   type: 'object',
@@ -133,7 +133,7 @@ The following object is valid under the above schema.
 
 ### References
 
-> With MongoDB, you can can include, within a document, a reference to another document (either in the same collection or somewhere else). You do that by inserting the referenced document's `ObjectId` into a field within the referencing document.
+> With Mongo, you can can include, within a document, a reference to another document (either in the same collection or somewhere else). You do that by inserting the referenced document's `ObjectId` into a field within the referencing document.
 
 `type: 'ref'` is used to indicate that the resource should be a reference.
 

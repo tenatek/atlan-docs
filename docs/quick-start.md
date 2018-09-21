@@ -29,7 +29,7 @@ const city = {
 };
 ```
 
-## Creating a connection to a MongoDB database
+## Creating a connection to a Mongo database
 
 ```javascript
 const connection = await MongoClient.connect(mongoUrl);

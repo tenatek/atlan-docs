@@ -33,7 +33,7 @@ class HomeSplash extends React.Component {
                 your database.
               </p>
               <p className="projectRequirements">
-                Requires Node.js, ExpressJS and MongoDB.
+                Requires Node.js, ExpressJS and Mongo.
               </p>
               <p className="liveDescription">
                 Try it! The code below is running live.
@@ -83,21 +83,21 @@ const Features = props => (
       },
       {
         content:
-          'Even though MongoDB is a NoSQL database, sometimes you just need to use references between documents. Atlan has built-in support for that, including population.',
+          'Even though Mongo is a NoSQL database, sometimes you just need to use references between documents. Atlan has built-in support for that, including population.',
         image: imgUrl('index/relationships.png'),
         imageAlign: 'top',
         title: 'Support for relationships'
       },
       {
         content:
-          'Atlan is a plugin to ExpressJS and MongoDB, which means it adds functionality without taking control over your project. Add your own custom ExpressJS routes or modify your database from another codebase, without affecting your API.',
+          'Atlan is a plugin to ExpressJS and Mongo, which means it adds functionality without taking control over your project. Add your own custom ExpressJS routes or modify your database from another codebase, without affecting your API.',
         image: imgUrl('index/control.png'),
         imageAlign: 'top',
         title: 'You retain full control'
       },
       {
         content:
-          'Atlan is really easy to use. Just define a schema (and optionally, some hooks) for each model. Plug in to ExpressJS and MongoDB. Serve your app. Start making requests.',
+          'Atlan is really easy to use. Just define a schema (and optionally, some hooks) for each model. Plug in to ExpressJS and Mongo. Serve your app. Start making requests.',
         image: imgUrl('index/developer.png'),
         imageAlign: 'top',
         title: 'From 0 to API in 10 minutes'
