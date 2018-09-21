@@ -34,7 +34,7 @@ const siteConfig = {
     theme: 'default'
   },
 
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: ['https://embed.runkit.com', '/js/custom.js'],
 
   gaTrackingId: 'UA-116065494-2',
   gaGtag: true,

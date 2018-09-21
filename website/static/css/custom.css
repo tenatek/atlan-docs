@@ -22,8 +22,9 @@
 }
 
 .usageSnippet {
-  max-width: 70%;
-  margin: 0 auto 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem 0;
 }
 
 .usageButton {
