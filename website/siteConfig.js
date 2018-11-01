@@ -34,6 +34,14 @@ const siteConfig = {
     theme: 'default'
   },
 
+  algolia: {
+    apiKey: 'f27d42b42859a69aa7a862f877f39125',
+    indexName: 'atlan',
+    algoliaOptions: {
+      facetFilters: ['language:en']
+    }
+  },
+
   scripts: ['https://embed.runkit.com', '/js/custom.js'],
 
   gaTrackingId: 'UA-116065494-2',
