@@ -78,13 +78,16 @@ let citySchema = {
     type: 'string'
   },
   geolocation: {
-    latitude: {
-      type: 'number',
-      required: true
-    },
-    longitude: {
-      type: 'number',
-      required: true
+    type: 'object',
+    properties: {
+      latitude: {
+        type: 'number',
+        required: true
+      },
+      longitude: {
+        type: 'number',
+        required: true
+      }
     }
   }
 }
